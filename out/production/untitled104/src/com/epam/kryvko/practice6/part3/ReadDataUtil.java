@@ -8,8 +8,6 @@ import java.io.*;
 public class ReadDataUtil {
 
 
-
-
     public String readData(String fileName ,String encoding) throws IOException {
        try( BufferedReader fileReader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName ) ,encoding)))
        {

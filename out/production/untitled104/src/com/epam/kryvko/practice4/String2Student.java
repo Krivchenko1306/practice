@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  */
 public class String2Student implements Converter<String , List<Student>>{
 
-    private static final Pattern pattern =Pattern.compile("([a-zA-z\\s]+);(((\\d*)(;|$))+)");
+    private static final Pattern pattern =Pattern.compile("([a-zA-z\\s]+);(((\\d*)(;)(\\d*))+)");
 
     @Override
     public List<Student> convert(String sr) {
@@ -21,7 +21,7 @@ public class String2Student implements Converter<String , List<Student>>{
             Student student = new Student();
             student.setName(matcher.group(1));
             String markGroup = matcher.group(2);
-            String[] marks = markGroup.split(";{1,}");
+            String[] marks = markGroup.split(";");
             for(int i =0; i < marks.length;i++)
             {
                 if(marks[i].isEmpty()) continue;

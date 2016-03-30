@@ -11,7 +11,7 @@ public class Demo {
 
     public static void main(String[] args)
     {
-        int k = (26*25)/2;
+        int k = 5;
         List<Student> students = new ArrayList<Student>();
         String2Student converte  = new String2Student();
         List<CorrelationResult> results = new ArrayList<>();

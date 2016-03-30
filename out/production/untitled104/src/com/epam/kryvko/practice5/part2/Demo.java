@@ -9,7 +9,7 @@ import com.epam.kryvko.practice5.InputUtil;
 public class Demo
 {
     public static void main(String[] args) {
-        String data = InputUtil.getInput("data3.txt");
+        String data = InputUtil.getInput("data2.txt");
         Converter converter = new ConverterImplPart2();
         System.out.println(converter.convert(data));
     }
