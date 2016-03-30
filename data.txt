@@ -1,0 +1,4 @@
+ivanov;Ivan Ivanov;ivanov@mail.ru
+petrov;Petr Petrov;petrov@google.com
+obama;Barack Obama;obama@google.com
+bush;George Bush;bush@mail.ru
