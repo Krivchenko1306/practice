@@ -16,8 +16,10 @@ public class GenerateNumberArray
         random = new Random(System.currentTimeMillis());
     }
 
+    @SuppressWarnings("unchecked")
     public  int[] generate(int len)
     {
+        if(len < 0) throw new IllegalArgumentException();
         int[] res = new int[len];
         for(int i = 0 ; i <len ; i++)
         {

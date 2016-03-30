@@ -44,7 +44,4 @@ public class Student
         this.marks.remove(mark);
     }
 
-    public  int  getMarkCount(){return  this.marks.size();}
-
-
 }

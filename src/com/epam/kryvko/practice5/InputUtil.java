@@ -9,8 +9,6 @@ import java.util.Scanner;
  */
 public class InputUtil
 {
-
-
         public static String getInput(String fileName) {
             StringBuilder sb = new StringBuilder();
             try {
@@ -25,6 +23,4 @@ public class InputUtil
 
             return sb.toString();
         }
-
-
 }

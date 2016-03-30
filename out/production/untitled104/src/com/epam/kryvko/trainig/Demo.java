@@ -46,9 +46,7 @@ public class Demo {
 //        StringBuffer buffer = new StringBuffer("you java");
 //        buffer.insert(2 , "love ");
 //        System.out.println(buffer);
-
-
-        System.out.println((char) 0xAA);
+;
 
 
 

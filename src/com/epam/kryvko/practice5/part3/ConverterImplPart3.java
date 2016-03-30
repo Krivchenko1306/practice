@@ -12,22 +12,20 @@ import java.util.regex.Pattern;
 /**
  * Created by Ghost on 29.03.2016.
  */
-public class ConverterImplPart3 implements Converter
-{
+public class ConverterImplPart3 implements Converter {
 
 
     @Override
-    public String convert(String string)
-    {
-        Pattern pattern = Pattern.compile("(\\S)(\\S+)");
+
+    public String convert(String string) {
+        Pattern pattern = Pattern.compile("(\\S)(?:(\\S*))");
         Matcher matcher = pattern.matcher(string);
-        StringBuilder builder = new StringBuilder();
-        for(int i =0;matcher.find(); i++)
-        {
-            builder.append(matcher.group(1).toUpperCase())
-                    .append(matcher.group(2)).
-                    append(" ");
+        StringBuffer buffer = new StringBuffer();
+        for (; matcher.find(); ) {
+            matcher.appendReplacement(buffer, matcher.group(1).toUpperCase() + "$2");
         }
-        return builder.toString();
+        matcher.appendTail(buffer);
+        return buffer.toString();
     }
 }
+
