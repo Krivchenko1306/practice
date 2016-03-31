@@ -2,5 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/data3.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/practice6/part2/BubbleSorterTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/practice6/part2/GenerateArrayTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/practice6/part2/ReaderUtilTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/practice6/part2/RunPart2Test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/practice6/part2/StringAppendUtilTest.java" charset="UTF-8" />
   </component>
 </project>

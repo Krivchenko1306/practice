@@ -26,7 +26,7 @@ public class Demo {
 
 		System.out.println("=========================== PART3");
 		// set the mock input
-		System.setIn(new ByteArrayInputStream("char\nString\nint\ndouble".getBytes(ENCODING)));
+		System.setIn(new ByteArrayInputStream("char\nString\nint\ndouble\n".getBytes(ENCODING)));
 		Part3.main(args);
 		// restore the standard input
 		System.setIn(STD_IN);

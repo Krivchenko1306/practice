@@ -27,14 +27,13 @@ public class Part3 {
         String data = util.readData(FILE_NAME , ENCODING);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in ,ENCODING));
         TypeMatcher matcher = new TypeMatcher(data);
+        String line = reader.readLine();
         do {
             System.out.println("Input type:");
-            String line = reader.readLine();
             Type type = TypeFactory.getType(line);
             if(type != Type.NoType) System.out.println( matcher.match(type));
-            else System.out.println("");
-            System.out.println("Do u continue?:");
-        }while(reader.readLine()!= null);
+            else System.out.println("No Type");
+        }while( (line =reader.readLine()) != null);
 
 	}
 
