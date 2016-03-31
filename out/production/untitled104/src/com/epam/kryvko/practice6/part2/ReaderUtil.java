@@ -13,8 +13,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Dmytro_Kryvko on 3/29/2016.
  */
-public class ReaderUtil
-{
+public class ReaderUtil {
     private static final String ENCODING = "UTF-8";
 
     private static final String FILE_NOT_FOUND_MSG = "Файл не найден";
@@ -22,14 +21,11 @@ public class ReaderUtil
     private static final String IO_ERROR_MSG = "i/o error";
 
 
-    public Integer[] readArray(String filename) throws IOException
-    {
+    public Integer[] readArray(String filename) throws IOException {
         List<Integer> res = new ArrayList<>();
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename) , ENCODING)))
-        {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), ENCODING))) {
             Pattern pattern = Pattern.compile("\\d+");
-            for(String line = null;  (line = reader.readLine()) != null ; )
-            {
+            for (String line = null; (line = reader.readLine()) != null; ) {
 
                 Matcher matcher = pattern.matcher(line);
                 while (matcher.find()) {
@@ -37,7 +33,7 @@ public class ReaderUtil
                 }
             }
         }
-        return  res.toArray(new Integer[res.size()]);
+        return res.toArray(new Integer[res.size()]);
     }
 
 

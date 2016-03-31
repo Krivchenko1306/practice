@@ -30,10 +30,4 @@ public class Demo {
         Part5.main(new String[]{});
     }
 
-    enum  Season
-    {
-        SPRING, S, A, W;
-         Season(){}
-    }
-
 }
