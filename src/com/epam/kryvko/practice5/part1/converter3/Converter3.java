@@ -14,26 +14,24 @@ public class Converter3 implements Converter {
 
     @Override
     public String convert(String string) {
-        Pattern pattern  =  Pattern.compile("([a-zA-z]+);([a-zA-z\\s]+);([a-zA-z]+(@.+))");
-        Matcher matcher =  pattern.matcher(string);
+        Pattern pattern = Pattern.compile("([a-zA-z]+);([a-zA-z\\s]+);([a-zA-z]+(@.+))");
+        Matcher matcher = pattern.matcher(string);
         ArrayList<String> domens = new ArrayList<>();
         StringBuilder builder = new StringBuilder();
-        while (matcher.find())
-        {
-           if(!domens.contains(matcher.group(4)))  domens.add(matcher.group(4));
+        while (matcher.find()) {
+            if (!domens.contains(matcher.group(4))) domens.add(matcher.group(4));
         }
         matcher.reset();
-        for (String domen: domens) {
+        for (String domen : domens) {
             builder.append(domen).append(" ==>");
-            while (matcher.find()){
-                if(matcher.group(4).equals(domen))
-                {
+            while (matcher.find()) {
+                if (matcher.group(4).equals(domen)) {
                     builder.append(matcher.group(1)).append(' ');
                 }
             }
             builder.append('\n');
             matcher.reset();
         }
-        return  builder.toString();
+        return builder.toString();
     }
 }

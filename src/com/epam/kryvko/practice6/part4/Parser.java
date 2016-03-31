@@ -1,4 +1,4 @@
-package  com.epam.kryvko.practice6.part4;
+package com.epam.kryvko.practice6.part4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,39 +15,37 @@ import java.util.regex.Pattern;
 public class Parser implements Iterable<String> {
 
 
-	Matcher matcher;
+    Matcher matcher;
 
-	public Parser(String fileName, String encoding) throws IOException {
-		// TODO place your code here
-		String data =  new String(Files.readAllBytes(Paths.get(fileName)) ,encoding);
-		Pattern pattern = Pattern.compile("(?<=(\\.|^))((.|(?:\\s))+?)(?=\\.)");
-		this.matcher  = pattern.matcher(data);
+    public Parser(String fileName, String encoding) throws IOException {
+        // TODO place your code here
+        String data = new String(Files.readAllBytes(Paths.get(fileName)), encoding);
+        Pattern pattern = Pattern.compile("(?<=(\\.|^))((.|(?:\\s))+?)(?=\\.)");
+        this.matcher = pattern.matcher(data);
 
-	}
+    }
 
-	@Override
-	public Iterator<String> iterator()
-	{
-		return new Iterator<String>(){
+    @Override
+    public Iterator<String> iterator() {
+        return new Iterator<String>() {
 
-			private int current = 0;
+            private int current = 0;
 
-			@SuppressWarnings("unchecked")
-			public boolean hasNext()
-			{
-				return  matcher.find();
-			}
+            @SuppressWarnings("unchecked")
+            public boolean hasNext() {
+                return matcher.find();
+            }
 
-			@Override
-			@SuppressWarnings("unchecked")
-			public String next() {
-				if(!matcher.find(current)) throw new IllegalStateException();
-				String res = matcher.group();
-				current+= res.length();
-				return res.trim();
-			}
-		};
-	}
+            @Override
+            @SuppressWarnings("unchecked")
+            public String next() {
+                if (!matcher.find(current)) throw new IllegalStateException();
+                String res = matcher.group();
+                current += res.length();
+                return res.trim();
+            }
+        };
+    }
 
 
 }

@@ -6,23 +6,21 @@ import java.util.regex.Pattern;
 /**
  * Created by Dmytro_Kryvko on 3/29/2016.
  */
-public class TypeMatcher
-{
-    private  String data;
+public class TypeMatcher {
+
+    private String data;
 
     public TypeMatcher(String data) {
         this.data = data;
     }
 
-    public String match(Type type)
-    {
-      StringBuilder builder = new StringBuilder();
+    public String match(Type type) {
+        StringBuilder builder = new StringBuilder();
         Pattern pattern = Pattern.compile(type.getRegex());
         Matcher matcher = pattern.matcher(data);
-        while (matcher.find())
-        {
+        while (matcher.find()) {
             builder.append(matcher.group()).append(' ');
         }
-        return  builder.toString();
+        return builder.toString();
     }
 }
