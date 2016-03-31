@@ -3,7 +3,6 @@ package test.practice6;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import test.practice6.part1.Part1Test;
 import test.practice6.part1.RunPart1Test;
 import test.practice6.part2.RunPart2Test;
 import test.practice6.part3.RunPart3Test;

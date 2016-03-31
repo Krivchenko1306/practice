@@ -8,6 +8,7 @@ import org.junit.Test;
 import com.epam.kryvko.practice6.part4.Part4;
 
 import java.io.*;
+import java.util.Iterator;
 import java.util.UUID;
 
 /**
@@ -17,11 +18,19 @@ public class ParserTest
 {
     private  static  String test1 = "ghedikthjboed nrfkdhnkfgd dgklnmfl. dmtflnkfmhgl dmntlnmfgl dtglnmrfl dtmnlkfm\nddfg bdfgnlfd.\naelgjsdohejtogddddsgtnd.";
 
+    private  static  String[] testValue = new String[]{"ghedikthjboed nrfkdhnkfgd dgklnmfl","dmtflnkfmhgl dmntlnmfgl dtglnmrfl dtmnlkfm\n" +
+            "ddfg bdfgnlfd" ,
+            "aelgjsdohejtogddddsgtnd" };
+
     private static  String test2 = "";
 
     private static  String test3 = "ahfgdjtu5ejfykfykgfwshtfjhksen rfhokjd srljh dt nroshdkl32763274b 3496902";
 
-    private static  String test4 = "nkrlsf lehtolrf elnetlh le neht ntn; srtg";
+    private  static  String[] test2Value = new String[]{""};
+
+    private static  String test4 = "nkrlsf lehtolrf elnetlh le neht ntn; srtg.";
+
+    private static  String[] testValue4 = new String[]{"nkrlsf lehtolrf elnetlh le neht ntn; srtg."};
 
     @BeforeClass
     public static void before() throws IOException {
@@ -49,6 +58,12 @@ public class ParserTest
     @Test
     public  void test1() throws IOException {
         Parser parser = new Parser("./test.txt" ,"UTF-8");
+        Iterator iterator = parser.iterator();
+        int count =0;
+        while(iterator.hasNext())
+        {
+            Assert.assertEquals(testValue[count++] ,iterator.next());
+        }
     }
     @Test
     public  void test2() throws IOException {

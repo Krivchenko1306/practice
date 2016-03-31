@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        Part1Test.class,
+        ConverterTest.class,
+        Part1Test.class
 })
 public class RunPart1Test {
 }
