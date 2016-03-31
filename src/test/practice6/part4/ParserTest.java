@@ -1,12 +1,11 @@
-package test.practice6.part3;
+package test.practice6.part4;
 
-import com.epam.kryvko.practice6.part2.ReaderUtil;
-import com.epam.kryvko.practice6.part2.StringAppendUtil;
-import com.epam.kryvko.practice6.part3.ReadDataUtil;
+import com.epam.kryvko.practice6.part4.Parser;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.epam.kryvko.practice6.part4.Part4;
 
 import java.io.*;
 import java.util.UUID;
@@ -14,10 +13,9 @@ import java.util.UUID;
 /**
  * Created by Dmytro_Kryvko on 3/31/2016.
  */
-public class ReadDataUtilTest
+public class ParserTest
 {
-
-    private  static  String test1 = "ghedikthjboed nrfkdhnkfgd dgklnmfl dmtflnkfmhgl dmntlnmfgl dtglnmrfl dtmnlkfm\nddfg bdfgnlfd\naelgjsdohejtogddddsgtnd";
+    private  static  String test1 = "ghedikthjboed nrfkdhnkfgd dgklnmfl. dmtflnkfmhgl dmntlnmfgl dtglnmrfl dtmnlkfm\nddfg bdfgnlfd.\naelgjsdohejtogddddsgtnd.";
 
     private static  String test2 = "";
 
@@ -48,36 +46,26 @@ public class ReadDataUtilTest
         writer3.close();
         writer4.close();
     }
-
-
     @Test
     public  void test1() throws IOException {
-        ReadDataUtil readerUtil = new ReadDataUtil();
-        Assert.assertEquals(test1 ,readerUtil.readData("./test.txt" , "UTF-8"));
+        Parser parser = new Parser("./test.txt" ,"UTF-8");
     }
-
     @Test
     public  void test2() throws IOException {
-        ReadDataUtil readerUtil = new ReadDataUtil();
-        Assert.assertEquals(test2 ,readerUtil.readData("./test2.txt" , "UTF-8"));
+        Parser parser = new Parser("./test2.txt" ,"UTF-8");
+        Assert.assertFalse(parser.iterator().hasNext());
     }
-
     @Test
     public  void test3() throws IOException {
-        ReadDataUtil readerUtil = new ReadDataUtil();
-        Assert.assertEquals(test3 ,readerUtil.readData("./test3.txt" , "UTF-8"));
+        Parser parser = new Parser("./test3.txt" ,"UTF-8");
     }
-
     @Test
     public  void test4() throws IOException {
-        ReadDataUtil readerUtil = new ReadDataUtil();
-        Assert.assertEquals(test4 ,readerUtil.readData("./test4.txt" , "UTF-8"));
+        Parser parser = new Parser("./test4.txt" ,"UTF-8");
     }
-
-    @Test(expected = FileNotFoundException.class)
-    public void test5() throws IOException {
-        ReadDataUtil readerUtil = new ReadDataUtil();
-        readerUtil.readData(UUID.randomUUID().toString(), "UTF-8");
+    @Test(expected = IOException.class)
+    public  void test5() throws IOException {
+        Parser parser = new Parser(UUID.randomUUID().toString() ,"UTF-8");
     }
 
 

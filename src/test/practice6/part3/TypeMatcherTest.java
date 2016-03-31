@@ -37,7 +37,7 @@ public class TypeMatcherTest
         TypeMatcher matcher = new TypeMatcher("1 ,  awgshrds   343.5  32   rsfhdtgt 5");
         Assert.assertEquals("awgshrds rsfhdtgt ", matcher.match(Type.String));
     }
-
+    @Test
     public  void test5()
     {
         TypeMatcher matcher = new TypeMatcher("1 ,     343.5  32   rsfhdtgt 5");

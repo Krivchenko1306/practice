@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class Parser implements Iterable<String> {
+public class Parser implements Iterable<String> {
 
 
 	Matcher matcher;
@@ -48,5 +48,6 @@ class Parser implements Iterable<String> {
 			}
 		};
 	}
+
 
 }
