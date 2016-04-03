@@ -11,6 +11,12 @@ import java.util.List;
  * Created by Dmytro_Kryvko on 3/22/2016.
  */
 public class Demo {
+
+
+    private Demo() {
+    }
+
+
     public static void main(String[] args) {
         SimpleMyList list = new SimpleMyList();
         list.add(1);

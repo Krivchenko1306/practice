@@ -9,6 +9,10 @@ import com.epam.kryvko.practice5.InputUtil;
  */
 public class Demo
 {
+
+    private Demo() {
+    }
+
     private  static  final String FILE_NAME = "data.txt";
 
     public static void main(String[] args) {

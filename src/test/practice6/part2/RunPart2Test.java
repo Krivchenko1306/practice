@@ -13,6 +13,7 @@ import org.junit.runners.Suite;
                 GenerateArrayTest.class,
                 StringAppendUtilTest.class,
                 ReaderUtilTest.class,
-                WriteUtilTest.class
+                WriteUtilTest.class,
+                Part2Test.class
         })
 public class RunPart2Test {}

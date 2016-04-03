@@ -12,6 +12,7 @@ public class RomanConverter {
                     RomanNumber.XC, RomanNumber.C};
 
     private enum RomanNumber {
+
         I(1), IV(4), V(5), IX(9), X(10), XL(40), L(50), XC(90), C(100);
 
         private int value;
@@ -41,17 +42,18 @@ public class RomanConverter {
 
     public static int roman2Decimal(String s) {
         int value = 0;
-        for (int count = s.length(); count >= 1; count--) {
+        for (int count = s.length(); count >= 1; count--)
+        {
             if (count == 1) {
                 value += RomanNumber.valueOf(s.substring(count - 1, count)).getValue();
-            } else {
+            }else {
                 int val1 = RomanNumber.valueOf(s.substring(count - 1, count)).getValue();
                 int val2 = RomanNumber.valueOf(s.substring(count - 2, count - 1)).getValue();
                 if (val1 < val2) {
                     value += val1;
                 } else {
                     value += RomanNumber.valueOf(s.substring(count - 2, count)).getValue();
-                    count--;
+                                                            count--;
                 }
             }
         }

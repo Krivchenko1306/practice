@@ -7,6 +7,11 @@ import com.epam.kryvko.practice3.part1.figures.Square;
 
 public class Demo {
 
+
+    private Demo() {
+    }
+
+
     public static void main(String[] args)
     {
         Figure circle = new Circle(2, 2, 2);

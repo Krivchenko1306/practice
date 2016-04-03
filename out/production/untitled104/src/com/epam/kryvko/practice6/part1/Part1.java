@@ -11,24 +11,26 @@ public class Part1 {
 
     private static final String ENCODING = "UTF-8";
 
-
-    private static final String FILE_NOT_FOUND_MSG = "Файл не найден";
-
     private static final String IO_ERROR_MSG = "i/o error";
 
+    private Part1() {
+    }
+
     public static void main(String[] args) {
+        String filename;
+        if (args.length != 0) {
+            filename = args[0];
+        } else {
+            filename = FILE_NAME;
+        }
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(FILE_NAME), ENCODING))) {
+                new InputStreamReader(new FileInputStream(filename), ENCODING))) {
             Converter converter = new ConverterPart1();
             for (String line = null; (line = reader.readLine()) != null; ) {
                 System.out.println(converter.convert(line));
             }
-
-        } catch (FileNotFoundException e) {
-            System.out.println(FILE_NOT_FOUND_MSG);
         } catch (IOException e) {
             System.out.println(IO_ERROR_MSG);
         }
     }
-
 }

@@ -11,6 +11,11 @@ import com.epam.kryvko.practice5.InputUtil;
 public class Demo {
     private static final String FILE_NAME = "data.txt";
 
+
+    private Demo() {
+    }
+
+
     public static void main(String[] args) {
         String data = InputUtil.getInput(FILE_NAME);
         Converter converter = new Converte1();

@@ -22,6 +22,8 @@ public class Part3 {
 
     private static final String ENCODING = "UTF-8";
 
+    private Part3(){}
+
     public static void main(String[] args) throws IOException {
         ReadDataUtil util = new ReadDataUtil();
         String data = util.readData(FILE_NAME, ENCODING);

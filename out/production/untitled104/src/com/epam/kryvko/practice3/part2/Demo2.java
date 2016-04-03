@@ -4,6 +4,13 @@ package com.epam.kryvko.practice3.part2;
  * Created by Dmytro_Kryvko on 3/24/2016.
  */
 public class Demo2 {
+
+
+
+    private Demo2() {
+    }
+
+
     public static void main(String[] args) {
         Object[] ar = {1, 2, 3};
         Iterator it = ArrayHelper.iterator(ar);

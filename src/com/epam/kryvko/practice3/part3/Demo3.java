@@ -5,6 +5,11 @@ package com.epam.kryvko.practice3.part3;
  */
 public class Demo3
 {
+
+    private Demo3() {
+    }
+
+
     public static void main(String[] args)
     {
         Stack stack  = new StackImpl();

@@ -14,9 +14,7 @@ import java.util.regex.Pattern;
  */
 public class ConverterImplPart3 implements Converter {
 
-
     @Override
-
     public String convert(String string) {
         Pattern pattern = Pattern.compile("(\\S)(?:(\\S*))");
         Matcher matcher = pattern.matcher(string);
